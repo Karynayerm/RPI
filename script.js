@@ -6,7 +6,7 @@ window.onload = function() {
   };
   
   
-  /* GENERATE GRID */
+  /* поле */
   function buildGridOverlay() {
     var game    = document.getElementsByClassName('game');  
     var grid    = document.getElementsByClassName('grid');
@@ -37,13 +37,13 @@ window.onload = function() {
   
   
   
-  /* RANDOM TILE CREATOR */
+  /* случайная плитка */
   function cellCreator(c, timeOut) {
-    /* do 2 times for 2 new tiles */
+    /* 2 раза для 2 новых плиток */
     for (var i = 0; i < c; i++) {
       
       var count = 0;
-      /* search for an empty cell to create a tile */
+      /* поиск пустой плитки */
       
       for (var value = 1; value < 2; value++) {
         var randomX = Math.floor((Math.random()*4)+1);
@@ -54,13 +54,13 @@ window.onload = function() {
         } 
       }
       
-      var randomValue = Math.floor((Math.random()*4) +1); //create value 1, 2, 3 or 4
+      var randomValue = Math.floor((Math.random()*4) +1); //придумать значения 1, 2, 3 or 4
       if (randomValue == 3) {randomValue=4};              //3 --> 4
       if (randomValue == 1) {randomValue=2};              //1 --> 2
       var position = document.getElementById(''+randomX +randomY);
-      var tile = document.createElement('DIV');           //create div at x, y
-      position.appendChild(tile);                         //tile becomes child of grid cell
-      tile.innerHTML = ''+randomValue;                    //tile gets value 2 or 4
+      var tile = document.createElement('DIV');           // div  x, y
+      position.appendChild(tile);                         //плитка становится дочерней ячейкой сетки
+      tile.innerHTML = ''+randomValue;                    //плитка получает значение 2 или 4
       
       colorSet(randomValue, tile);
       tile.data = ''+randomValue;
@@ -82,13 +82,13 @@ window.onload = function() {
   
   }
   
-  /* MOVE TILES */
+  /* передвижение */
   document.onkeydown = directions;
   
   function directions(e) {
     e = e || window.event;
     var d = 0;
-  // ----- KEY UP ----- //
+  // ----- вверх ----- //
       if (e.keyCode == '38') {      
         var count = 2;  
         
@@ -106,7 +106,7 @@ window.onload = function() {
         cellReset();
       }   
         
-  // ----- KEY DOWN ----- //
+  // ----- вниз ----- //
       else if (e.keyCode == '40') { // down
         var count = -2;  
         var test  = 1;
@@ -123,7 +123,7 @@ window.onload = function() {
         cellReset();
       }
         
-  // ----- KEY LEFT ----- //      
+  // ----- лево ----- //      
       
       else if (e.keyCode == '37') { // left
         
@@ -143,7 +143,7 @@ window.onload = function() {
         cellReset();
       }
     
-  // ----- KEY RIGHT ----- //
+  // ----- право ----- //
       else if (e.keyCode == '39') { // right
         
         var count = -2;  
@@ -212,15 +212,11 @@ window.onload = function() {
         checker.className = 'grid_cell';
         document.getElementsByClassName('grid').id = 'moved';
       }
-      
-      
-      //________
     }  
   }
   
-  
   //-------------------------------------------------------
-  
+
   
   function cellReset() {
     var count = 0;
@@ -260,8 +256,7 @@ window.onload = function() {
     
   }
   
-  
-  /* ----- STYLE ----- */
+  /* ----- стиль ----- */
   function colorSet(value, tile) {
     switch(value) {
       case 2:    tile.style.background = '#fbfced'; tile.style.color = 'black'; break;

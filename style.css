@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #8ef8f8;
   overflow: hidden;
   paddin: 0;
   margin: 0;
@@ -61,7 +61,7 @@ div.description {
   cursor: pointer;
   border: 0px;
   border-color: #aaa;
-  background-color: #88b1ef;
+  background-color: #013220;
   color: #fff;
   font-size: 20px;
   top: 50px;
@@ -71,7 +71,7 @@ div.description {
 }
 
 .info:hover {
-  background-color: #6593d8;
+  background-color: #012417;
 }
 
 
@@ -95,7 +95,7 @@ div.description {
   font-family: nunito;
   font-weight: 400;
   font-size: 30px;
-  color: grey;
+  color: black;
   text-align: center;
 }
 
@@ -106,10 +106,10 @@ div.description {
   position: absolute;
   width: 510px;
   height: 510px;
-  background-color: #888;
+  background-color: #45322E;
   top: 150px;
   border-radius: 0px;
-  border:5px solid #888;
+  border:5px solid #45322E;
   display: table;
   margin-left: auto;
   margin-right: auto;
@@ -139,7 +139,7 @@ div.description {
   position: relative;
   display: table-cell;
   border-radius: 0px;
-  border: 5px solid #888;
+  border: 5px solid #45322E;
   text-align: center;
   vertical-align: middle;
   font-family: nunito;
@@ -147,7 +147,7 @@ div.description {
 }
 
 .grid_cell {
-  background-color: #aaa;
+  background-color: #918151;
   color: white;
   
 }
@@ -195,11 +195,11 @@ div > div > div > div {
 }
 
 .won {
-  background-color: #337538;
+  background-color: rgb(69, 245, 69);
   transition: 0.3s all;
   
 }
 
 .lose {
-  background-color: #7D3C34;
+  background-color: #f7371d;
 }
